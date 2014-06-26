@@ -1,5 +1,8 @@
 from demo import app, db, manager
 from models import Player
+from flask import render_template
+from flask.ext.babel import gettext as _
+
 
 db.create_all()
 manager.create_api(Player, methods=["GET", "POST", "DELETE"])
@@ -7,7 +10,7 @@ manager.create_api(Player, methods=["GET", "POST", "DELETE"])
 
 @app.route('/')
 def index():
-    return app.send_static_file('index.html')
+    return render_template('index.html')
 
 
 if __name__ == "__main__":

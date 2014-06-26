@@ -4,6 +4,11 @@
 
 var app = angular.module("App", []);
 
+app.config(function($interpolateProvider) {
+  $interpolateProvider.startSymbol('<*');
+  $interpolateProvider.endSymbol('*>');
+});
+
 app.controller("AppCtrl", function($scope, $element, $http) {
     var app = this;
     $http.get("/api/player").success(function(data){

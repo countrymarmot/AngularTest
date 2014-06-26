@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div ng-app="App" ng-controller="AppCtrl as app">
+    <form class="form-inline" role="form">
+        <input type="text" class="form-control" placeholder="first_name" ng-model="newPlayer.first_name">
+        <input type="text" class="form-control" placeholder="last_name" ng-model="newPlayer.last_name">
+        <input type="text" class="form-control" placeholder="age" ng-model="newPlayer.age">
+        <input type="text" class="form-control" placeholder="nation" ng-model="newPlayer.nation">
+        <input type="text" class="form-control" placeholder="club" ng-model="newPlayer.club">
+        <button class="btn btn-default" ng-click="app.addNewPlayer()">add player</button>
+    </form>
+    <input type="text" ng-model="searchText" />
+    <table class="table table-bordered table-striped">
+        <tr ng-repeat=" player in app.players | filter: searchText">
+            <td><* $index + 1 *></td>
+            <td><* player.first_name *></td>
+            <td><* player.last_name *></td>
+            <td><* player.age *></td>
+            <td><* player.nation *></td>
+            <td><* player.club *></td>
+        </tr>
+    </table>
+</div>
+
+{% endblock %}
