@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div ng-controller="RegisterCtrl">
+    <form class="input-group">
+        <input ng-model="user.username" class="form-control" type="text" placeholder="User Name" />
+        <input ng-model="user.password" class="form-control" type="password" placeholder="Password" />
+        <input ng-model="re_password" class="form-control" type="password" placeholder="Retype Password" />
+        <input ng-model="user.department" class="form-control" type="text" placeholder="Department" />
+        <button class="btn btn-default" ng-click="register()">{{ _("register") }}</button>
+    </form>
+    <alert ng-repeat="alert in alerts" type="<* alert.type *>" close="closeAlert($index)"><* alert.msg *></alert>
+    <div id="qr"></div>
+</div>
+
+{% endblock %}

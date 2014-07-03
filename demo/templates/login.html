@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div ng-controller="UserCtrl">
+    <form class="input-group">
+    <input ng-model="user.username" class="form-control" type="text" placeholder="Username" />
+    <input ng-model="user.password" class="form-control" type="password" placeholder="Password" />
+    <input ng-model="user.otp" class="form-control" type="password" placeholder="One Time Password" />
+    <button class="btn btn-default" ng-click="login()">{{ _("login") }}</button>
+    </form>
+    <alert ng-repeat="alert in alerts" type="<* alert.type *>" close="closeAlert($index)"><* alert.msg *></alert>
+</div>
+
+{% endblock %}

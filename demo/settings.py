@@ -1,5 +1,5 @@
 DEBUG = True
-SECRET_KEY = 'test_secret_key'   # make sure to change this
-SQLALCHEMY_DATABASE_URI = 'sqlite:///worldcup.db'
+SECRET_KEY = '&*LI791JMI'
+SQLALCHEMY_DATABASE_URI = 'sqlite:///demo.db'
 BABEL_DEFAULT_LOCALE = "zh_CN"
 #BABEL_DEFAULT_LOCALE = "en"
